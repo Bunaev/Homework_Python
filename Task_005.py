@@ -17,7 +17,7 @@ for i in range(len(array)):
         array[i] = str('Решка')
     else:
         array[i] = str('Орёл')
-print(' ' + ', '.join(array) + ' ')
+print('- ' + ', '.join(array) + ' -')
 for i in range(len(array)):
     if array[i] == 'Орёл':
         side_1+=1
