@@ -31,7 +31,7 @@ def show_contacts(book, message):
         print('\n' + '=' * (size_name+size_comment+size_phone+7))
         for index, contact in book.items():
             print(f'{index:>3}. {contact.get("name"):<{size_name}} {contact.get("phone"):<{size_phone}} {contact.get("comment"):<{size_comment}}')
-            print('=' * (size_name+size_comment+size_phone+7) + '\n')
+            print('=' * (size_name+size_comment+size_phone+7))
     else:
         print_message(message)
 
@@ -42,3 +42,22 @@ def print_message(message: str):
 
 def search_word() -> str:
     return input(text.search_word)
+
+def edit_key():
+    while True:
+        change = input(text.change_massege)
+        if change.isdigit() and 0 < int(change) < 4:
+            return int(change)
+        print(text.change_index_error)
+
+def edit_contact(book: dict):
+    index = int(input(text.edit_index))
+    find_key = str(edit_key())
+    new_value = input(text.edit_new)
+    if find_key == 1:
+        book[index]['name'] = new_value
+    elif find_key == 2:
+        book[index]['phone'] = new_value
+    elif find_key == 3:
+        book[index]['comment'] = new_value
+    print_message(text.edit_successfull)

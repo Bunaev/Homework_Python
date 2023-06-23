@@ -1,7 +1,7 @@
 import json
 
 phone_book = {}
-path = 'phone.json'
+path = 'Yellow_page\phone.json'
 
 def open_file():
     global phone_book
@@ -36,3 +36,5 @@ def check_id():
     if phone_book:
         return max(list(map(int, phone_book))) + 1
     return 1
+
+
