@@ -32,8 +32,11 @@ def start():
             view.show_contacts(result, text.empty_search(edit))
             view.edit_contact(model.phone_book)
         elif select == 7:
-            pass
+            edit = view.search_word()
+            result = model.search(edit)
+            view.show_contacts(result, text.empty_search(edit))
+            view.delete_contact(model.phone_book)
         elif select == 8:
-            view.print_message()
+            view.print_message(text.good_bye)
             break
     

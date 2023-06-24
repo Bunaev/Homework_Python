@@ -50,9 +50,20 @@ def edit_key():
             return int(change)
         print(text.change_index_error)
 
+def sure():
+    while True:
+        a_y_s = input(text.sure_massege).lower()
+        if a_y_s == 'y':
+            return 1
+        elif a_y_s == 'n':
+            return 0
+        else:
+            print(text.sure_error)
+            continue
+
 def edit_contact(book: dict):
-    index = int(input(text.edit_index))
-    find_key = str(edit_key())
+    index = input(text.edit_index)
+    find_key = edit_key()
     new_value = input(text.edit_new)
     if find_key == 1:
         book[index]['name'] = new_value
@@ -61,3 +72,10 @@ def edit_contact(book: dict):
     elif find_key == 3:
         book[index]['comment'] = new_value
     print_message(text.edit_successfull)
+
+def delete_contact(book: dict):
+    index = input(text.delete_massege)
+    confir = sure()
+    if confir == 1:
+        temp = book.pop(index)
+        print_message(text.delete_successfull(temp['name']))
