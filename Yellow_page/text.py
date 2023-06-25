@@ -34,3 +34,4 @@ sure_massege = 'Вы уверены? Y/N: '
 sure_error = 'Ошибка ввода! Введите "Y" или "N": '
 def delete_successfull(book: dict):
     return f'Контакт {book} успешно удален!'
+change_confirm = 'У Вас есть несохраненные данные! Сохранить перед выходом? (Y/N): '

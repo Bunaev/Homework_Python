@@ -79,3 +79,6 @@ def delete_contact(book: dict):
     if confir == 1:
         temp = book.pop(index)
         print_message(text.delete_successfull(temp['name']))
+
+def view_input(message: str) -> str:
+    return input(message)
